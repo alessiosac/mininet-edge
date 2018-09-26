@@ -54,7 +54,7 @@ def vlanTest():
     "Create and test a simple network"
     topo = SwitchesTopo()
     net = Mininet(topo, switch=OVSKernelSwitch, controller=RemoteController)
-    c1 =  RemoteController( 'c1', ip='192.168.56.1' )
+    c1 = RemoteController('c1', ip='192.168.56.1')
     net.addController(c1)
     net.staticArp()
     net.start()
