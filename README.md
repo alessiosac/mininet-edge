@@ -31,8 +31,23 @@ run the following commands:
     
 For instance, a possible configuration could be:
 
-    $ ./random-topology 10 10 10 100
+    $ ./random-topology 10 10 10 100 127.0.0.1
     
+Before executing the program. remember to start the SDN controller(e.g., Ryu).
 Now deploy the topology on Mininet:
 
     $ sudo python test_topology.py
+    
+After running the script, you can test the behaviour, here some tips:
+
+    mininet> h1 ping h2
+    mininet> nodes
+    mininet> net
+    mininet> dump
+    
+    mininet> h1 python -m SimpleHTTPServer 80 &
+    mininet> h2 wget -O - h1
+    ...
+    mininet> h1 kill %python
+    
+    mininet> exit

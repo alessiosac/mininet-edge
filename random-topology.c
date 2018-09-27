@@ -168,7 +168,7 @@ int main(int argc, char **argv)
 	fprintf(fptr, "\n\ndef topology():\n");
 	fprintf(fptr, "    net = Mininet(controller=RemoteController, link=TCLink, switch=OVSKernelSwitch)\n");
 	//fprintf(fptr, "  c0 = net.addController('c0', controller=Controller, ip='127.0.0.1', port=6633 )\n");
-	fprintf(fptr, "    c0 = net.addController( 'c0', controller=RemoteController, ip='%s', port=6633 )\n", ipAddress);
+	fprintf(fptr, "    c0 = net.addController('c0', controller=RemoteController, ip='%s', port=6633 )\n", ipAddress);
 	//fprintf(fptr, "  s1 = net.addSwitch('s1', listenPort=6673, mac='00:00:00:00:00:01')\n");
 	//fprintf(fptr, "  h1 = net.addHost('h1', mac='00:00:00:00:00:01', ip='10.0.0.1/24')\n");
 	//fprintf(fptr, "  h2 = net.addHost('h2', mac='00:00:00:00:00:02', ip='10.0.0.2/24')\n");
