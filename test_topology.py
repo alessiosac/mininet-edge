@@ -49,7 +49,9 @@ def topology():
     net.addLink(s8, s10, bw=93)
     net.addLink(s5, s8, bw=53)
     net.addLink(s6, s7, bw=94)
-    net.build()
+    net.start()
+    set_arp_hosts(net)
+    net.staticArp()
     c0.start()
     s1.start([c0])
     s2.start([c0])
@@ -63,6 +65,13 @@ def topology():
     s10.start([c0])
     CLI(net)
     net.stop()
+
+
+def set_arp_hosts(net):
+    for src in net.hosts:
+        for dst in net.hosts:
+            if src != dst:
+                src.setARP(dst.IP(), dst.MAC())
 
 
 if __name__ == '__main__':
