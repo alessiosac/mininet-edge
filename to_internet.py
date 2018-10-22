@@ -26,7 +26,7 @@ def myNetwork():
 
     info( '*** Starting network\n')
     net.start()
-    h1.cmdPrint('dhclient '+h1.defaultIntf().name)
+    h1.cmdPrint('dhclient h1-eth0')
     CLI(net)
     net.stop()
 
