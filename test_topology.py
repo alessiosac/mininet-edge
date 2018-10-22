@@ -8,7 +8,7 @@ from mininet.link import Link, TCLink
 
 def topology():
     net = Mininet(controller=RemoteController, link=TCLink, switch=OVSKernelSwitch)
-    c0 = net.addController( 'c0', controller=RemoteController, ip='192.168.56.102', port=6633)
+    c0 = net.addController('c0', controller=RemoteController, ip='192.168.56.102', port=6633)
     s1 = net.addSwitch('s1')
     s2 = net.addSwitch('s2')
     s3 = net.addSwitch('s3')
@@ -45,10 +45,13 @@ def topology():
     net.addLink(s2, s10, bw=93)
     net.addLink(s3, s10, bw=68)
     net.addLink(s4, s10, bw=89)
-    net.addLink(s7, s10, bw=100)
+    # net.addLink(s7, s10, bw=100)
     net.addLink(s8, s10, bw=93)
     net.addLink(s5, s8, bw=53)
     net.addLink(s6, s7, bw=94)
+    # Add NAT connectivity
+    net.addNAT().configDefault()
+
     net.start()
     set_arp_hosts(net)
     net.staticArp()
