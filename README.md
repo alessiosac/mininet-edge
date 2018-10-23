@@ -101,4 +101,4 @@ Now check the internet connectivity using ping.
 
     h1 ping www.google.com
     
-Please be careful as in this solution the IP address of the hosts is assigned by DHCP, thus this can break the controller behaviour.
+Please be careful as in this solution the IP address of the hosts is assigned by DHCP, thus this can break the controller behavior.
