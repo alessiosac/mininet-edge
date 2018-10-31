@@ -102,3 +102,13 @@ Now check the internet connectivity using ping.
     h1 ping www.google.com
     
 Please be careful as in this solution the IP address of the hosts is assigned by DHCP, thus this can break the controller behavior.
+
+## Performance Evaluation:
+
+The idea is to simulate real traffic in the edge in addition to the data related to the 
+`Livemicro` application.
+
+The real traffic is emulated using real traces in `unina.pcap`. 
+You can run the following command for sending packets based on this trace.
+
+    h7 tcpreplay --intf1=h7-eth0 unina.pcap

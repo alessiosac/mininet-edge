@@ -65,8 +65,9 @@ def myNetwork():
     net.addLink(h12, s9)
 
     info( '*** Starting network\n')
-    nat0 = net.addNAT('nat0', ip=natIP , localIntf='eth0' ,inNamespace=False)
-    net.addLink(nat0 , s1)
+    nat0 = net.addNAT('nat0', ip=natIP, mac='a2:e5:59:71:28:ca', localIntf='eth0', connect=None, inNamespace=False)
+
+    net.addLink(nat0, s2)
     #net.addNAT()
     net.build()
 
