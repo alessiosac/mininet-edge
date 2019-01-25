@@ -9,8 +9,10 @@ from mininet.link import Link, TCLink
 def topology():
     natIP = '10.0.0.20'
 
+    private_dirs = [("/etc/ssl/private/", "/home/ubuntu")]
+
     net = Mininet(controller=RemoteController, link=TCLink, switch=OVSKernelSwitch)
-    c0 = net.addController('c0', controller=RemoteController, ip='192.168.56.102', port=6633)
+    c0 = net.addController('c0', controller=RemoteController, ip='192.168.56.103', port=6633)
     s1 = net.addSwitch('s1')
     s2 = net.addSwitch('s2')
     s3 = net.addSwitch('s3')
@@ -55,7 +57,7 @@ def topology():
     nat0 = net.addNAT('nat0', ip=natIP, mac='42:ef:43:7c:76:0d', localIntf='eth0', connect=None, inNamespace=False)
     net.addLink(nat0, s3)
 
-    net.build()
+    net.start()
     set_arp_hosts(net)
     net.staticArp()
     c0.start()
