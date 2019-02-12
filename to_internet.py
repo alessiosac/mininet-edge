@@ -6,17 +6,18 @@ from mininet.cli import CLI
 from mininet.link import Intf
 from mininet.log import setLogLevel, info
 
+
 def myNetwork():
 
-    net = Mininet( topo=None,
+    net = Mininet(topo=None,
                    build=False)
 
-    info( '*** Adding controller\n' )
+    info('*** Adding controller\n' )
     net.addController(name='c0')
 
-    info( '*** Add switches\n')
+    info('*** Add switches\n')
     s1 = net.addSwitch('s1')
-    Intf( 'eth2', node=s1 )
+    Intf('eth2', node=s1 )
 
     info( '*** Add hosts\n')
     h1 = net.addHost('h1', ip='0.0.0.0')
