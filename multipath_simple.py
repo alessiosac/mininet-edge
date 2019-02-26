@@ -51,10 +51,10 @@ def topology():
     net.addLink(s1, s9, bw=100)
     # net.addLink(s1, s11, bw=100)
 
-    net.addLink(s3, s4, bw=10)
-    net.addLink(s5, s6, bw=10)
-    net.addLink(s7, s8, bw=10)
-    net.addLink(s9, s10, bw=10)
+    net.addLink(s3, s4, bw=100)
+    net.addLink(s5, s6, bw=100)
+    net.addLink(s7, s8, bw=100)
+    net.addLink(s9, s10, bw=100)
     # net.addLink(s11, s12, bw=100)
 
     net.addLink(s2, s4, bw=100)
