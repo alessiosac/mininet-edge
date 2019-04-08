@@ -43,7 +43,7 @@ def topology():
     net.addLink(s2, h9, bw=100)
     h10 = net.addHost('h10', mac='ba:a7:e7:40:7e:95', defaultRoute='via ' + natIP)
     net.addLink(s7, h10, bw=100)
-    net.addLink(s1, s2, bw=97)
+    net.addLink(s1, s2, bw=57)
     net.addLink(s1, s6, bw=9)
     # net.addLink(s1, s6, bw=93)
     net.addLink(s2, s10, bw=9)
