@@ -12,7 +12,7 @@ def topology():
     private_dirs = [("/etc/ssl/private/", "/home/ubuntu")]
 
     net = Mininet(controller=RemoteController, link=TCLink, switch=OVSKernelSwitch)
-    c0 = net.addController('c0', controller=RemoteController, ip='192.168.56.103', port=6633)
+    c0 = net.addController('c0', controller=RemoteController, ip='127.0.0.1', port=6633)
     s1 = net.addSwitch('s1')
     s2 = net.addSwitch('s2')
     # s3 = net.addSwitch('s3')
